@@ -94,7 +94,7 @@ public class Game {
 		Player currPlayer = players.get(0);
 		
 		// game loop
-		while(true) {		
+		while(true) {
 			if(!(currPlayer instanceof VPlayer)) {
 				System.out.print("Press enter to roll!");
 				String rollCmd = in.nextLine();				
@@ -108,6 +108,13 @@ public class Game {
 			boolean isOver = referee.calculatePoint(currPlayer, randomDice);
 			if(isOver) {
 				referee.announceWinner(currPlayer);
+				for(Player player : players) {
+					if(player instanceof VPlayer) {
+						if(player != currPlayer) {
+							((VPlayer) player).loseBehavior();
+						}
+					}
+				}
 				break;
 			}
 			

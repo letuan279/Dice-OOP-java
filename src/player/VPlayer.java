@@ -25,6 +25,6 @@ public class VPlayer extends Player{
 	}
 
 	public void loseBehavior() {
-		System.out.println(loseSentence);
+		System.out.println(this.getName() + " : " + loseSentence);
 	}
 }
