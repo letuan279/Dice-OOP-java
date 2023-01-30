@@ -17,9 +17,9 @@ public class Game {
 	private Referee referee;
 	private List<Dice> dieces;
 	
-	public Game() {
-		this.playerNumber = 4;
-		this.diceNumber = 4;
+	public Game(int playerNumber, int diceNumber) {
+		this.playerNumber = playerNumber;
+		this.diceNumber = diceNumber;
 		this.dieces = new ArrayList<Dice>();
 		this.players = new ArrayList<Player>();
 		// Set dice data
